@@ -222,6 +222,25 @@ end
 # the list of bank holidays is here:
 # https://www.gov.uk/bank-holidays
 def is_a_2014_bank_holiday?(date)
+  if date == Time.new(2014, 12, 26)
+    return true
+  elsif date == Time.new(2014, 12, 25)
+    return true
+  elsif date == Time.new(2014, 8, 25)
+    return true
+  elsif date == Time.new(2014, 5, 26)
+    return true
+  elsif date == Time.new(2014, 5, 5)
+    return true
+  elsif date == Time.new(2014, 4, 21)
+    return true
+  elsif date == Time.new(2014, 4, 18)
+    return true
+  elsif date == Time.new(2014, 1, 1)
+    return true
+  else
+    return false
+  end
 end
 
 # given your birthday this year, this method tells you
@@ -243,6 +262,20 @@ end
 # go from 1 to 100
 # (there's no RSpec test for this one)
 def fizzbuzz_without_modulo
+  (1..100).each do |n|
+    m_5 = (n - 5 * (n / 5) == 0)
+    m_3 = (n - 3 * (n / 3) == 0)
+    case
+      when m_5&&m_3
+        puts 'fizzbuzz'
+      when m_5
+        puts 'buzz'
+      when m_3
+        puts 'fizz'
+      else
+        puts n
+    end
+  end
 end
 
 # print the lyrics of the song 99 bottles of beer on the wall
